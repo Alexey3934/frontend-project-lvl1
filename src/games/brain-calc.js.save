@@ -18,10 +18,11 @@ const expressionWithRightAnswer = () => {
 };
 
 export default () => {
-  console.log('What is the result of the expression?');
+  console.log('What number is missing in the progression?');
   const arrayOfThreeValues = [];
   for (let i = 0; i !== 3; i += 1) {
-    arrayOfThreeValues.push(expressionWithRightAnswer());
+    arrayOfThreeValues.push(());
   }
   return arrayOfThreeValues;
 };
+

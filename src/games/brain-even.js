@@ -6,8 +6,7 @@ const arrayOfNumberAndRightAnswer = () => {
   return [number, rightAnswer];
 };
 
-
-export const generateThreeNumbers = () => {
+export default () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
   const arrayOfThreeValues = [];
   for (let i = 0; i !== 3; i += 1) {
@@ -15,4 +14,3 @@ export const generateThreeNumbers = () => {
   }
   return arrayOfThreeValues;
 };
-

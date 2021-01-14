@@ -1,0 +1,58 @@
+
+let name = '';
+
+export const nameQuestion = () => {
+  name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+};
+
+const randomNumberLess20 = () => Math.floor(Math.random() * 20);
+
+export const generateThreeValues = (value) => {
+  const arrayOfThreeValues = [];
+  for (let i = 0; i !== 3; i += 1) {
+    arrayOfThreeValues.push(value);
+  }
+  return arrayOfThreeValues;
+};
+
+export const arrayOfNumbersAndRightAnswers = () => {
+  const number = randomNumberLess20();
+  const rightAnswer = (number % 2 === 0) ? 'yes' : 'no';
+  return [number, rightAnswer];
+};
+
+export const expressionWithRightAnswer = () => {
+  console.log('What is the result of the expression?');
+  const operators = ['-', '+', '*'];
+  const indexOf3elements = Math.floor(Math.random() * 3);
+  const operator = operators[indexOf3elements];
+  const firstNumber = randomNumberLess20();
+  const secondNumber = randomNumberLess20();
+  const expression = `${firstNumber} ${operator} ${secondNumber}`;
+  let rightAnswer = 0;
+  if (operator === '-'){
+    rightAnswer = firstNumber-secondNumber;
+  } else {
+    rightAnswer = (operator === '+') ? firstNumber+secondNumber : firstNumber*secondNumber;
+  }
+  return [expression, rightAnswer];
+};
+
+export const bodyProcess = (arrayOfThreeValues) => {
+  for (let i = 0; arrayOfThreeValues.length > i; i += 1) {
+    const [value, rightAnswer] = arrayOfThreeValues[i];
+    console.log(`Question: ${value}`);
+    const answer = readlineSync.question('Your answer: ');
+    if (Number(answer) === rightAnswer) {
+      console.log('Correct!');
+      if (i + 1 === arrayOfThreeValues.length) {
+        console.log(`Congratulations, ${name}!`);
+      }
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
+      console.log(`Let's try again, ${name}!`);
+      break;
+    } 
+  }
+}

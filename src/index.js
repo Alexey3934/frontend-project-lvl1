@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
-import {name} from './cli.js';
+import { name } from './cli.js';
 
-export const bodyProcess = (arrayOfThreeValues) => {
+export default (arrayOfThreeValues) => {
   for (let i = 0; arrayOfThreeValues.length > i; i += 1) {
     const [value, rightAnswer] = arrayOfThreeValues[i];
     console.log(`Question: ${value}`);
@@ -17,5 +17,4 @@ export const bodyProcess = (arrayOfThreeValues) => {
       break;
     }
   }
-} 
-
+};
