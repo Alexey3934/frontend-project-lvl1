@@ -1,9 +1,16 @@
 #!/usr/bin/env node
 
-import { nameQuestion, generateThreeNumbers, bodyProcess } from '../src/cli.js';
+import {greeting} from '../src/cli.js'; 
+import {generateThreeNumbers} from '../src/games/brain-even.js';
+import {bodyProcess} from '../src/index.js';
 
-console.log('Welcome to the Brain Games!');
-
-nameQuestion();
+greeting();
 
 bodyProcess(generateThreeNumbers());
+
+
+
+
+
+
+
