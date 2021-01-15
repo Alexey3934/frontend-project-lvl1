@@ -1,14 +1,16 @@
 import readlineSync from 'readline-sync';
-import { name } from './cli.js';
+import greeting from './cli.js';
 
 export default (arrayOfThreeValues) => {
-  for (let i = 0; arrayOfThreeValues.length > i; i += 1) {
-    const [value, rightAnswer] = arrayOfThreeValues[i];
+   const name = greeting();
+   const input =  arrayOfThreeValues(); 
+  for (let i = 0; input.length > i; i += 1) {
+    const [value, rightAnswer] = input[i];
     console.log(`Question: ${value}`);
     const answer = String(readlineSync.question('Your answer: '));
     if (answer === rightAnswer) {
       console.log('Correct!');
-      if (i + 1 === arrayOfThreeValues.length) {
+      if (i + 1 === input.length) {
         console.log(`Congratulations, ${name}!`);
       }
     } else {

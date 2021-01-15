@@ -2,13 +2,15 @@ const randomNumber = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const lengthOfArray = randomNumber(5, 10);
+let lengthOfArray = 0;
 let arrayOfProgressia = [];
 
 const progressia = () => {
+  
   const difBetweenElements = randomNumber(2, 6);
   let element = randomNumber(5, 20);
-
+  arrayOfProgressia = [];
+  lengthOfArray = randomNumber(5, 10);
   for (let i = 0; lengthOfArray > i; i += 1){
     arrayOfProgressia.push(element);
     element += difBetweenElements;
@@ -21,8 +23,9 @@ const progressiaWithRightAnswer = () =>{
   const index = randomNumber(0,lengthOfArray-1);
   const rightAnswer = String(arrayOfProgressia[index]);
   arrayOfProgressia[index] = '..';
-  arrayOfProgressia = arrayOfProgressia.join(' ');
-  return [arrayOfProgressia, rightAnswer];
+  let stringOfArray = '';
+  stringOfArray = arrayOfProgressia.join(' ');
+  return [stringOfArray, rightAnswer];
 }
 
 export default () => {
