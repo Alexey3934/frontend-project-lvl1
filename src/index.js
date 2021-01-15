@@ -2,8 +2,8 @@ import readlineSync from 'readline-sync';
 import greeting from './cli.js';
 
 export default (arrayOfThreeValues) => {
-   const name = greeting();
-   const input =  arrayOfThreeValues(); 
+  const name = greeting();
+  const input = arrayOfThreeValues();
   for (let i = 0; input.length > i; i += 1) {
     const [value, rightAnswer] = input[i];
     console.log(`Question: ${value}`);
